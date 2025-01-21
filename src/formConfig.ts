@@ -1,14 +1,15 @@
 export interface FormInput {
   username: string;
+  name: string;
   email: string;
   password: string;
   acceptTerms: boolean;
 }
 
 export interface FieldConfig {
-  label: string;
-  type: 'text' | 'email' | 'password' | 'checkbox';
-  validation: Record<string, any>;
+  label?: string;
+  type?: 'text' | 'email' | 'password' | 'checkbox';
+  validation?: Record<string, any>;
 }
 
 export const FormFields: Record<keyof FormInput, FieldConfig> = {
@@ -19,6 +20,9 @@ export const FormFields: Record<keyof FormInput, FieldConfig> = {
       required: 'Username is required',
       minLength: { value: 4, message: 'Username must be at least 4 characters long' }
     }
+  },
+  name: {
+    label: "Name"
   },
   email: {
     label: 'Email',

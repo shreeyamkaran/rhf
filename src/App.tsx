@@ -22,7 +22,7 @@ const App: React.FC = () => {
         <div className="w-full bg-gray-200 h-2 rounded-full mb-6">
           <div
             className="bg-blue-500 h-full rounded-full transition-all duration-300"
-            style={{ width: `${((currentStep) / steps.length) * 100}%` }}
+            style={{ width: `${((currentStep + 1) / steps.length) * 100}%` }}
           ></div>
         </div>
         {/* Render current step */}
